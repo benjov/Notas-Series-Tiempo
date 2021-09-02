@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 8 Modelos multivariados de volatilidad: \(M - ARCH\) y \(M - GARCH\) | Notas de Clase: Series de Tiempo</title>
+  <title>Capítulo 14 Apéndice Práctico | Notas de Clase: Series de Tiempo</title>
   <meta name="description" content="Trabajo siempre en proceso de mejora, para cualquier comentario o aclaración, contactar al correo benjov@ciencias.unam.mx o omarxalpha@gmail.com" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 8 Modelos multivariados de volatilidad: \(M - ARCH\) y \(M - GARCH\) | Notas de Clase: Series de Tiempo" />
+  <meta property="og:title" content="Capítulo 14 Apéndice Práctico | Notas de Clase: Series de Tiempo" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 8 Modelos multivariados de volatilidad: \(M - ARCH\) y \(M - GARCH\) | Notas de Clase: Series de Tiempo" />
+  <meta name="twitter:title" content="Capítulo 14 Apéndice Práctico | Notas de Clase: Series de Tiempo" />
   
   <meta name="twitter:description" content="Trabajo siempre en proceso de mejora, para cualquier comentario o aclaración, contactar al correo benjov@ciencias.unam.mx o omarxalpha@gmail.com" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="procesos-no-estacionarios.html"/>
-<link rel="next" href="modelos-univariados-y-multivariados-de-volatilidad.html"/>
+<link rel="prev" href="apendice-i.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -176,100 +176,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modelos-multivariados-de-volatilidad-m---arch-y-m---garch" class="section level1">
-<h1><span class="header-section-number">Capítulo 8</span> Modelos multivariados de volatilidad: <span class="math inline">\(M - ARCH\)</span> y <span class="math inline">\(M - GARCH\)</span></h1>
+<div id="apéndice-práctico" class="section level1">
+<h1><span class="header-section-number">Capítulo 14</span> Apéndice Práctico</h1>
 
-<p>Hasta ahora en el curso hemos usado el supuesto de que las series son estacionarias para el conjunto de técnicas <span class="math inline">\(ARMA(p,q)\)</span> y <span class="math inline">\(VAR(p)\)</span>. No obstante, dado que relajamos el supuesto de estacionariedad (incluyendo la estacionariedad en varianza) y que establecimos una serie de pruebas para determinar cuando una serie es estadísticamente estacionaria, ahora podemos plantear una técnica llamada Cointegración. Para esta técnica consideraremos sólo series que son <span class="math inline">\(I(1)\)</span> y reconoceremos que se originó con los trabajos de Engle y Granger (1987), Stock (1987) y Johansen (1988).</p>
-<div id="definición-y-propiedades-del-proceso-de-cointegración" class="section level2">
-<h2><span class="header-section-number">8.1</span> Definición y propiedades del proceso de cointegración</h2>
-<p>Cointegración puede ser caracterizada o definida en palabras sencillas como que dos o más variables tienen una relación común estable en el largo plazo. Es decir, estas no suelen tomar caminos o trayectorias diferentes, excepto por periodos de tiempo transitorios y eventuales. A continuación, utilizaremos la definición de Engle y Grnager (1984) de cointegración.</p>
-<p>Sea <span class="math inline">\(\mathbf{Y}\)</span> un vector de k-series de tiempo, decimos que los elementos en <span class="math inline">\(\mathbf{Y}\)</span> están cointegrados en un orden (d, c), es decir, <span class="math inline">\(\mathbf{Y} \sim CI(d, c)\)</span>, si todos los elementos de <span class="math inline">\(\mathbf{Y}\)</span> son series integradas de orden d, I(d), y si existe al menos una combinación lineal no trivial <span class="math inline">\(\mathbf{Z}\)</span> de esas variables que es de orden I(d - c), donde <span class="math inline">\(d \geq c &gt; 0\)</span>, si y sólo si:
-<span class="math display">\[\begin{equation}
-    \boldsymbol{\beta}_i&#39; \mathbf{Y}_t = \mathbf{Y}_{it} \sim I(d-c)
-\end{equation}\]</span></p>
-<p>Donde <span class="math inline">\(i = 1, 2, \ldots, r\)</span> y <span class="math inline">\(r &lt; k\)</span>.</p>
-<p>A los diferentes vectores <span class="math inline">\(\boldsymbol{\beta}_i\)</span> se les denomina como vectores de cointegración. El rango de la matriz de vectores de cointegración <span class="math inline">\(r\)</span> es el número de vectores de cointegración linealmente independientes. En general diremos que los vectores de la matriz de cointegración <span class="math inline">\(\boldsymbol{\beta}\)</span> tendrá la forma de:
-<span class="math display">\[\begin{equation}
-    \boldsymbol{\beta}&#39; \mathbf{Y}_t = \mathbf{Z}_t
-\end{equation}\]</span></p>
-<p>Antes de continuar hagamos algunas observaciones. Si todas las variables de <span class="math inline">\(\mathbf{Y}\)</span> son I(1) y <span class="math inline">\(0 \leq r &lt; k\)</span>, diremos que las series no cointegran si <span class="math inline">\(r = 0\)</span>. Si esto pasa, entonces, como demostraremos más adelante, la mejor opción será estimar un modelo VAR(p) en diferencias. Adicionalmente, asumiremos que <span class="math inline">\(c = d = 1\)</span>, por lo que la relación de cointegración, en su caso, generará combinaciones lineales <span class="math inline">\(\mathbf{Z}\)</span> estacionarias.</p>
-</div>
-<div id="cointegración-para-modelos-de-más-de-una-ecuación-o-para-modelos-basados-en-vectores-autoregresivos" class="section level2">
-<h2><span class="header-section-number">8.2</span> Cointegración para modelos de más de una ecuación o para modelos basados en Vectores Autoregresivos</h2>
-Sean <span class="math inline">\(Y_1, Y_2, \ldots, Y_k\)</span> son series que forman <span class="math inline">\(\mathbf{Y}\)</span> y que todas son I(1), entonces los siguientes casos son posibles:
-
-<p>Por lo anterior, en este curso analizaremos el caso de Cointegración de Johansen. Ahora plantearemos la forma de estimar el proceso de cointgración. El primer paso para ello es determinar un modelo VAR(p) con las k-series no estacionarias (series en niveles). Alegimos el valor de <span class="math inline">\(p\)</span> mediante el uso de los criterios de información. De esta forma tendremos una especificación similar a:
-<span class="math display">\[\begin{equation}
-    \mathbf{Y}_t = \sum_{j=1}^p \mathbf{A}_j \mathbf{Y}_{t-j} + \mathbf{D}_t + \mathbf{U}_t
-    \label{VAR_CI}
-\end{equation}\]</span></p>
-<p>Donde <span class="math inline">\(\mathbf{U}_t\)</span> es un término de error k-dimensional puramente aleatorio; <span class="math inline">\(\mathbf{D}_t\)</span> contiene los compeoentes deterministicos de constante y tendencia, y <span class="math inline">\(\mathbf{A}_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p\)</span>, son matrices de <span class="math inline">\(k \times k\)</span> coeficientes. Notemos que el VAR(p) involucrado en este caso, a diferencia del VAR anteriormente estudiado, puede incluir un término de tendencia. Esto en razón de que hemos relajado el concepto de estacionariedad.</p>
-<p>Si reescribimos la ecuación () en su forma de Vector Corrector de Errores (VEC, por sus siglas en inglés) tenemos:
-<span class="math display">\[\begin{eqnarray}
-    \mathbf{Y}_t - \mathbf{Y}_{t-1} &amp; = &amp; \Delta \mathbf{Y}_t \nonumber \\
-    &amp; = &amp; \sum_{j=1}^p \mathbf{A}_j \mathbf{Y}_{t-j} + \mathbf{D}_t - \mathbf{Y}_{t-1} + \mathbf{U}_t \nonumber \\
-    &amp; = &amp; (\mathbf{A}_1 - \mathbf{I}) \mathbf{Y}_{t-1} + \mathbf{A}_2 \mathbf{Y}_{t-2} + \ldots + \mathbf{A}_p \mathbf{Y}_{t-p} + \mathbf{D}_t + \mathbf{U}_t \nonumber \\
-    &amp; = &amp; \left( \sum_{j=1}^{p} \mathbf{A}_j - \mathbf{I} \right) \mathbf{Y}_{t-1} + \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t \mathbf{U}_t \nonumber \\
-    &amp; = &amp; - \left( \mathbf{I} - \sum_{j=1}^{p} \mathbf{A}_j \right) \mathbf{Y}_{t-1} + \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t \mathbf{U}_t \nonumber \\
-    \Delta \mathbf{Y}_t &amp; = &amp; - \Pi \mathbf{Y}_{t-1} + \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t + \mathbf{U}_t
-    \label{VAR_VEC}
-\end{eqnarray}\]</span></p>
-<p>Donde <span class="math inline">\(\mathbf{A}_j^* = - \sum_{i=j+1}^p \mathbf{A}_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p-1\)</span>, y la matriz <span class="math inline">\(\Pi\)</span> representa todas las relaciones de largo plazo entre las variables, por lo que la matriz es de rango completo <span class="math inline">\(k \times k\)</span>. Por lo tanto, tenemos que dicha matriz en la ecuación () se puede factorizar como:
-<span class="math display">\[\begin{equation}
-    \Pi_{(k \times k)} = \Gamma_{(k \times r)} \boldsymbol{\beta}_{(r \times k)}&#39;
-    \label{Pi_Matrix}
-\end{equation}\]</span></p>
-<p>Donde <span class="math inline">\(\boldsymbol{\beta}_{(r \times k)}&#39; \mathbf{Y}_{t-1}\)</span> son <span class="math inline">\(r\)</span> combinaciones linealmente independientes que son estacionarias.</p>
-<p>Dada la ecuación () podemos establecer la aproximación de Johansen (1988) que se realiza mediante una estimación por Máxima Verosimilitud de la ecuación:
-<span class="math display">\[\begin{equation}
-    \Delta \mathbf{Y}_t + \Gamma \boldsymbol{\beta}&#39; \mathbf{Y}_{t-1} = \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t + \mathbf{U}_t
-\end{equation}\]</span></p>
-<p>Donde una vez estimado el sistema:
-<span class="math display">\[\begin{equation}
-    \boldsymbol{\beta} = [v_1, v_2, \ldots, v_r]
-\end{equation}\]</span></p>
-Cada <span class="math inline">\(v_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, r\)</span>, es un vector propio que asociado a los <span class="math inline">\(r\)</span> valores propios positivos, mismos que estás asociados con la prueba de hipótesis de cointegración. Dicha hipótesis está basada en dos estadísticas con las que se determina el rango <span class="math inline">\(r\)</span> de <span class="math inline">\(\Pi\)</span>:
-
-</div>
-<div id="ejemplo-de-cointegración" class="section level2">
-<h2><span class="header-section-number">8.3</span> Ejemplo de cointegración</h2>
-<p>Para ejemplificar el procedimiento de cointegración utilizaremos las series de INPC, Tipo de Cambio, rendimiento de los Cetes a 28 días, IGAE e Índice de Producción Industrial de Estados Unidos. Quizá el marco teórico de la relación entre las variables no sea del todo correcta, pero dejando de lado ese problema estimaremos si las 5 series cointegran.</p>
-En el Scrip Clase 17 de la capeta de GoogleDrive se encuentra el desarrollo de este ejemplo. Por principio, probaremos que todas las series son I(1), lo cual es cierto (ver Scrip para mayores detalles). En la Figura () se muestran las series en niveles y en diferencias, con lo cual ilustramos como es viable que las series sean I(1).
-
-Posteriormente, determinamos cuál es el orden adecuado de un VAR(p) en niveles. En el Cuadro () mostramos los resultados de los criterios de información para determinar el número de rezagos óptimos, el cual resultó en <span class="math inline">\(p = 3\)</span> para los criterios AIC y FPE, <span class="math inline">\(p = 2\)</span> para el criterio HQ y <span class="math inline">\(p = 1\)</span> para el citerio SC. Por lo tanto decidiremos utilizar un VAR(3) con tendencia y constante.
-
-El mismo número de rezagos los utilizaremos para probar la Cointegración ya sea por una estadística de la Traza o por una de el máximo valor propio. En el Scrip llamado Clase 18 que se encuentra en la carpeta de GoogleDrive se ubican todos los resultados citados acontinuación. Derivado de la exploración de los resultados sólo matraremos uno de los caso en que las series cointegran y sólo para el caso de la prueba de la traza. En el Cuadro () reportamos los resultados del Test de Cointegración para un modelo con 3 rezagos.
-
-<p>Los resutados del Cuadro () indican que acptamos la hipótesis nula para el caso de <span class="math inline">\(r \leq 1\)</span> al <span class="math inline">\(5\%\)</span>, por lo que podemos concluir que existe evidencia estadística para probar que existen al menos 1 vector de cointegración. Por lo que dicho vector es:
-<span class="math display">\[\begin{equation}
-    \boldsymbol{\beta} = \left[ 
-    \begin{matrix}
-    1.00000000 \\
-    0.151162436 \\
-    -0.042650912 \\
-    0.163804862 \\
-    0.229295743 \\
-    -0.004350646 \\
-    \end{matrix} \right]
-\end{equation}\]</span></p>
-<p>Donde el vector esta normalizado para la serie <span class="math inline">\(LINPC_t\)</span>, por lo que concluímos que la relación de largo plazo que encontramos cointegra estará dada por:
-<span class="math display">\[\begin{eqnarray*}
-    LINPC_t &amp; = &amp; -0.151162436 LTC_t + 0.042650912 LCETE28_t \\
-    &amp;  &amp; - 0.163804862 LIGAE_t - 0.229295743 LIPI_t \\
-    &amp;  &amp; + 0.004350646 t
-\end{eqnarray*}\]</span></p>
-Considerando lo anterior, podemos determinar <span class="math inline">\(\hat{U}_t\)</span> para esta ecuación de cointegración. En la Figura () mostramos los residuales estimados. Derivado de la impección visual parecería que estos no son estacionarios, condición que debería ser cierta. De esta forma, una prueba deseable es aplicar todas la pruebas de raíces unitarias a esta serie para mostrar que es I(0). En el Scrip llamado Clase 18 en la carpeta de GoogleDrive se muestran algunas pruebas sobre esta serie y se encuentra que es posible que no sea estacionaria.
-
-
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="procesos-no-estacionarios.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="modelos-univariados-y-multivariados-de-volatilidad.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="apendice-i.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

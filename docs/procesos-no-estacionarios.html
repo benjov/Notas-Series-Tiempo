@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 8 Modelos multivariados de volatilidad: \(M - ARCH\) y \(M - GARCH\) | Notas de Clase: Series de Tiempo</title>
+  <title>Capítulo 7 Procesos No Estacionarios | Notas de Clase: Series de Tiempo</title>
   <meta name="description" content="Trabajo siempre en proceso de mejora, para cualquier comentario o aclaración, contactar al correo benjov@ciencias.unam.mx o omarxalpha@gmail.com" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 8 Modelos multivariados de volatilidad: \(M - ARCH\) y \(M - GARCH\) | Notas de Clase: Series de Tiempo" />
+  <meta property="og:title" content="Capítulo 7 Procesos No Estacionarios | Notas de Clase: Series de Tiempo" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 8 Modelos multivariados de volatilidad: \(M - ARCH\) y \(M - GARCH\) | Notas de Clase: Series de Tiempo" />
+  <meta name="twitter:title" content="Capítulo 7 Procesos No Estacionarios | Notas de Clase: Series de Tiempo" />
   
   <meta name="twitter:description" content="Trabajo siempre en proceso de mejora, para cualquier comentario o aclaración, contactar al correo benjov@ciencias.unam.mx o omarxalpha@gmail.com" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="procesos-no-estacionarios.html"/>
-<link rel="next" href="modelos-univariados-y-multivariados-de-volatilidad.html"/>
+<link rel="prev" href="procesos-basados-en-vectores-autoregresivos.html"/>
+<link rel="next" href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -176,91 +176,166 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modelos-multivariados-de-volatilidad-m---arch-y-m---garch" class="section level1">
-<h1><span class="header-section-number">Capítulo 8</span> Modelos multivariados de volatilidad: <span class="math inline">\(M - ARCH\)</span> y <span class="math inline">\(M - GARCH\)</span></h1>
-
-<p>Hasta ahora en el curso hemos usado el supuesto de que las series son estacionarias para el conjunto de técnicas <span class="math inline">\(ARMA(p,q)\)</span> y <span class="math inline">\(VAR(p)\)</span>. No obstante, dado que relajamos el supuesto de estacionariedad (incluyendo la estacionariedad en varianza) y que establecimos una serie de pruebas para determinar cuando una serie es estadísticamente estacionaria, ahora podemos plantear una técnica llamada Cointegración. Para esta técnica consideraremos sólo series que son <span class="math inline">\(I(1)\)</span> y reconoceremos que se originó con los trabajos de Engle y Granger (1987), Stock (1987) y Johansen (1988).</p>
-<div id="definición-y-propiedades-del-proceso-de-cointegración" class="section level2">
-<h2><span class="header-section-number">8.1</span> Definición y propiedades del proceso de cointegración</h2>
-<p>Cointegración puede ser caracterizada o definida en palabras sencillas como que dos o más variables tienen una relación común estable en el largo plazo. Es decir, estas no suelen tomar caminos o trayectorias diferentes, excepto por periodos de tiempo transitorios y eventuales. A continuación, utilizaremos la definición de Engle y Grnager (1984) de cointegración.</p>
-<p>Sea <span class="math inline">\(\mathbf{Y}\)</span> un vector de k-series de tiempo, decimos que los elementos en <span class="math inline">\(\mathbf{Y}\)</span> están cointegrados en un orden (d, c), es decir, <span class="math inline">\(\mathbf{Y} \sim CI(d, c)\)</span>, si todos los elementos de <span class="math inline">\(\mathbf{Y}\)</span> son series integradas de orden d, I(d), y si existe al menos una combinación lineal no trivial <span class="math inline">\(\mathbf{Z}\)</span> de esas variables que es de orden I(d - c), donde <span class="math inline">\(d \geq c &gt; 0\)</span>, si y sólo si:
+<div id="procesos-no-estacionarios" class="section level1">
+<h1><span class="header-section-number">Capítulo 7</span> Procesos No Estacionarios</h1>
+<div id="definición-y-formas-de-no-estacionariedad" class="section level2">
+<h2><span class="header-section-number">7.1</span> Definición y formas de No Estacionariedad</h2>
+<p>Hasta ahora hemos planteado una serie de ténicas de regresión que aplican sólo a procesos o series estacionarias. En esta sección relajaremos la definición de estacionariedad y plantearemos pruebas para determinar cuando una serie es estacionaria bajo tres diferentes especificiones: (1) estacionariedad al rededor de una tendencia determinística; (2) estacionariedad al rededor de una media, y (3) estacionariedad al rededor del cero.</p>
+<p>A continuación discutiremos cómo es posible que una serie sea estacionaria al rededor de una tendencia determinística. Diremos que una tendencia es determinística si ésta puede ser aproximada o modelada por un polinomio en función de <span class="math inline">\(t\)</span>, la cual incluye posibles transformaciones logarítmicas.</p>
+<p>Bajo este enfoque, el proceso está lejos de cumplir con la defición de estacionariedad que hemos establecido en capítulos previos, pero relajaremos el supuesto y reconoceremos que una serie puede ser estacionaria en varianza bajo una tendencia determinística. Así, diremos que la serie será descrita por una ecuación dada por:
 <span class="math display">\[\begin{equation}
-    \boldsymbol{\beta}_i&#39; \mathbf{Y}_t = \mathbf{Y}_{it} \sim I(d-c)
+    Y_t = \sum^m_{j = 0} \delta_j t^j + X_t
+    \label{Y_Trend}
 \end{equation}\]</span></p>
-<p>Donde <span class="math inline">\(i = 1, 2, \ldots, r\)</span> y <span class="math inline">\(r &lt; k\)</span>.</p>
-<p>A los diferentes vectores <span class="math inline">\(\boldsymbol{\beta}_i\)</span> se les denomina como vectores de cointegración. El rango de la matriz de vectores de cointegración <span class="math inline">\(r\)</span> es el número de vectores de cointegración linealmente independientes. En general diremos que los vectores de la matriz de cointegración <span class="math inline">\(\boldsymbol{\beta}\)</span> tendrá la forma de:
+<p>Donde <span class="math inline">\(X_t\)</span> es un proceso <span class="math inline">\(ARMA(p, q)\)</span> con media cero, que se puede ver como:
 <span class="math display">\[\begin{equation}
-    \boldsymbol{\beta}&#39; \mathbf{Y}_t = \mathbf{Z}_t
+    \alpha(L) X_t = \beta(L) U_t
 \end{equation}\]</span></p>
-<p>Antes de continuar hagamos algunas observaciones. Si todas las variables de <span class="math inline">\(\mathbf{Y}\)</span> son I(1) y <span class="math inline">\(0 \leq r &lt; k\)</span>, diremos que las series no cointegran si <span class="math inline">\(r = 0\)</span>. Si esto pasa, entonces, como demostraremos más adelante, la mejor opción será estimar un modelo VAR(p) en diferencias. Adicionalmente, asumiremos que <span class="math inline">\(c = d = 1\)</span>, por lo que la relación de cointegración, en su caso, generará combinaciones lineales <span class="math inline">\(\mathbf{Z}\)</span> estacionarias.</p>
-</div>
-<div id="cointegración-para-modelos-de-más-de-una-ecuación-o-para-modelos-basados-en-vectores-autoregresivos" class="section level2">
-<h2><span class="header-section-number">8.2</span> Cointegración para modelos de más de una ecuación o para modelos basados en Vectores Autoregresivos</h2>
-Sean <span class="math inline">\(Y_1, Y_2, \ldots, Y_k\)</span> son series que forman <span class="math inline">\(\mathbf{Y}\)</span> y que todas son I(1), entonces los siguientes casos son posibles:
-
-<p>Por lo anterior, en este curso analizaremos el caso de Cointegración de Johansen. Ahora plantearemos la forma de estimar el proceso de cointgración. El primer paso para ello es determinar un modelo VAR(p) con las k-series no estacionarias (series en niveles). Alegimos el valor de <span class="math inline">\(p\)</span> mediante el uso de los criterios de información. De esta forma tendremos una especificación similar a:
+<p>Entonces, los momentos y variaza de la ecuación () estaran dados por:
 <span class="math display">\[\begin{equation}
-    \mathbf{Y}_t = \sum_{j=1}^p \mathbf{A}_j \mathbf{Y}_{t-j} + \mathbf{D}_t + \mathbf{U}_t
-    \label{VAR_CI}
+    \mathbb{E}[Y_t] = \sum^m_{j = 0} \delta_j t^j = \mu_t
+    \label{E_Trend}
 \end{equation}\]</span></p>
-<p>Donde <span class="math inline">\(\mathbf{U}_t\)</span> es un término de error k-dimensional puramente aleatorio; <span class="math inline">\(\mathbf{D}_t\)</span> contiene los compeoentes deterministicos de constante y tendencia, y <span class="math inline">\(\mathbf{A}_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p\)</span>, son matrices de <span class="math inline">\(k \times k\)</span> coeficientes. Notemos que el VAR(p) involucrado en este caso, a diferencia del VAR anteriormente estudiado, puede incluir un término de tendencia. Esto en razón de que hemos relajado el concepto de estacionariedad.</p>
-<p>Si reescribimos la ecuación () en su forma de Vector Corrector de Errores (VEC, por sus siglas en inglés) tenemos:
+<p>Dada la ecuación () podemos plantear la siguiente ecuación de covarainzas:
 <span class="math display">\[\begin{eqnarray}
-    \mathbf{Y}_t - \mathbf{Y}_{t-1} &amp; = &amp; \Delta \mathbf{Y}_t \nonumber \\
-    &amp; = &amp; \sum_{j=1}^p \mathbf{A}_j \mathbf{Y}_{t-j} + \mathbf{D}_t - \mathbf{Y}_{t-1} + \mathbf{U}_t \nonumber \\
-    &amp; = &amp; (\mathbf{A}_1 - \mathbf{I}) \mathbf{Y}_{t-1} + \mathbf{A}_2 \mathbf{Y}_{t-2} + \ldots + \mathbf{A}_p \mathbf{Y}_{t-p} + \mathbf{D}_t + \mathbf{U}_t \nonumber \\
-    &amp; = &amp; \left( \sum_{j=1}^{p} \mathbf{A}_j - \mathbf{I} \right) \mathbf{Y}_{t-1} + \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t \mathbf{U}_t \nonumber \\
-    &amp; = &amp; - \left( \mathbf{I} - \sum_{j=1}^{p} \mathbf{A}_j \right) \mathbf{Y}_{t-1} + \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t \mathbf{U}_t \nonumber \\
-    \Delta \mathbf{Y}_t &amp; = &amp; - \Pi \mathbf{Y}_{t-1} + \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t + \mathbf{U}_t
-    \label{VAR_VEC}
+    \mathbb{E}[(Y_t - \mu_t) \cdot (Y_{t+\tau} - \mu_{t+\tau})] &amp; = &amp; \mathbb{E}[X_t \cdot X_{t+\tau}] \nonumber \\
+    &amp; = &amp; \gamma_X(\tau)
+    \label{Cov_Trend}
 \end{eqnarray}\]</span></p>
-<p>Donde <span class="math inline">\(\mathbf{A}_j^* = - \sum_{i=j+1}^p \mathbf{A}_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p-1\)</span>, y la matriz <span class="math inline">\(\Pi\)</span> representa todas las relaciones de largo plazo entre las variables, por lo que la matriz es de rango completo <span class="math inline">\(k \times k\)</span>. Por lo tanto, tenemos que dicha matriz en la ecuación () se puede factorizar como:
+<p>Utilizando el resultado de la ecuación () podemos establecer que:
 <span class="math display">\[\begin{equation}
-    \Pi_{(k \times k)} = \Gamma_{(k \times r)} \boldsymbol{\beta}_{(r \times k)}&#39;
-    \label{Pi_Matrix}
+    \mathbb{E}[(Y_t - \mu_t)^2] = \mathbb{E}[X_t^2] = \sigma_X^2
+    \label{Var_Trend}
 \end{equation}\]</span></p>
-<p>Donde <span class="math inline">\(\boldsymbol{\beta}_{(r \times k)}&#39; \mathbf{Y}_{t-1}\)</span> son <span class="math inline">\(r\)</span> combinaciones linealmente independientes que son estacionarias.</p>
-<p>Dada la ecuación () podemos establecer la aproximación de Johansen (1988) que se realiza mediante una estimación por Máxima Verosimilitud de la ecuación:
+<p>Así, las ecuaciones () y () significan que el proceso descrito por la ecuación () es estacionario pero en varianza. De esta forma a partir de este momento diremos que una serie será estacionaria al rededor de una tendencia determinística si cumple con las condiciones establecidas en las ecuaciones (), () y ().</p>
+<p>Dicho lo anterior estudiaremos el concepto de raíz unitaria de un proceso estocástico o de una serie de tiempo. Partamos de platear que un proceso AR(1) tiene raíz unitaria cuando el cual el coeficiente <span class="math inline">\(a_1 = 1\)</span>, es decir:
 <span class="math display">\[\begin{equation}
-    \Delta \mathbf{Y}_t + \Gamma \boldsymbol{\beta}&#39; \mathbf{Y}_{t-1} = \sum_{j=1}^{p-1} \mathbf{A}^*_j \Delta \mathbf{Y}_{t-j} + \mathbf{D}_t + \mathbf{U}_t
+    Y_t = Y_{t-1} + U_t
+    \label{UR_1}
 \end{equation}\]</span></p>
-<p>Donde una vez estimado el sistema:
+<p>Donde <span class="math inline">\(U_t\)</span> es un proceso pueramente aleatorio con media cero, varianza constante y autocovarianza cero (0), al cual nos referiremos simplemente como ruido blanco. Supongamos ahora que incluímos un término constante en la ecuación (), de forma que tenemos:
 <span class="math display">\[\begin{equation}
-    \boldsymbol{\beta} = [v_1, v_2, \ldots, v_r]
+    Y_t = \delta + Y_{t-1} + U_t
+    \label{UR_2}
 \end{equation}\]</span></p>
-Cada <span class="math inline">\(v_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, r\)</span>, es un vector propio que asociado a los <span class="math inline">\(r\)</span> valores propios positivos, mismos que estás asociados con la prueba de hipótesis de cointegración. Dicha hipótesis está basada en dos estadísticas con las que se determina el rango <span class="math inline">\(r\)</span> de <span class="math inline">\(\Pi\)</span>:
+<p>Tomando a la ecuación () y suponiendo que existe un valor inicial <span class="math inline">\(Y_0\)</span> de la serie podemos plantear la sguiente secuencia de expresiones:
+<span class="math display">\[\begin{eqnarray*}
+    Y_1 &amp; = &amp; \delta + Y_0 + U_1 \\
+    Y_2 &amp; = &amp; \delta + Y_1 + U_2 \\
+    &amp; = &amp; \delta + (\delta + Y_0 + U_1) + U_2 \\
+    &amp; = &amp; 2 \times \delta + Y_0 + U_1 + U_2
+\end{eqnarray*}\]</span></p>
+<p>Si repitieramos la sustitución sucesiva anterior hasta el momento <span class="math inline">\(t\)</span> encontrariamos que la ecuación de la solución general que describe a un <span class="math inline">\(AR(1)\)</span> con término constante que tiene raíz unitaria es de la forma:
+<span class="math display">\[\begin{equation}
+    Y_t = t \delta + Y_0 + \sum_{i=1}^t U_i
+    \label{UR_3}
+\end{equation}\]</span></p>
+<p>La ecuación () es equivalente a la ecuación (). A la ecuación () también se le conoce como proceso con Drift o con término constante, indistintamente, ya que el componente de Drift suele asociarse a la posibilidad de incorporar el efecto de los residuales pasados, lo cual es posible simplemente agregando una constante.s</p>
+<p>Si revisamos el comportamiento de sus momentos y varianza de la ecuación () encontramos que:
+<span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}[Y_t] &amp; = &amp; Y_0 + \delta t = \mu_t \\
+    Var[Y_t] &amp; = &amp; t \sigma^2 = \gamma(0, t) \\
+    Cov(Y_t, Y_{t+\tau}) &amp; = &amp; (t - \tau) \sigma^2 = \gamma(t, \tau)
+\end{eqnarray*}\]</span></p>
+<p>De esta forma, la ecuación () no describe un proceso estacionario, sólo podría ser estacionario si <span class="math inline">\(t = 1\)</span>, en cualquier otro caso sería no estacionario en varianza. Ahora hagamos un resumen y acordemos notación que se utilizará en esta sección. Supongamos un proceso o serie de tiempo que es decrito por la siguiente ecuación:
+<span class="math display">\[\begin{equation}
+    Y_t = \delta + Y_{t-1} + X_t
+    \label{UR_4}
+\end{equation}\]</span></p>
+<p>Donde <span class="math inline">\(X_t\)</span> es un <span class="math inline">\(ARMA(p, q)\)</span> con media cero. Si definimos a <span class="math inline">\(\Delta Y_t = Y_t - Y_{t-1}\)</span>, entonces la ecuación () la podemos escribir como:
+<span class="math display">\[\begin{equation}
+    \Delta Y_t = \delta + X_t
+    \label{UR_5}
+\end{equation}\]</span></p>
+<p>A la ecuación () la denominaremos como un proceso estacionario en diferencias o simplemente como un proceso integrado. Así utilizaremos la siguiente definición.</p>
+<p>Sea un proceso estocástico <span class="math inline">\(Y\)</span>, decimos que este es integrado de orden <span class="math inline">\(d\)</span>, <span class="math inline">\(I(d)\)</span>, si este puede transformarse a uno estacionacionario, que sea invertible, mediante la diferenciación del mismo <span class="math inline">\(d\)</span>-veces, es decir:
+<span class="math display">\[\begin{equation}
+    (1 - L)^d Y_t = \delta + X_t
+    \label{UR_6}
+\end{equation}\]</span></p>
+<p>Donde <span class="math inline">\(X_t\)</span> es un proceso <span class="math inline">\(ARMA(p, q)\)</span>. De lo cual se infiere que en la ecuación () <span class="math inline">\(Y_t\)</span> será una <span class="math inline">\(ARIMA(p, d, q)\)</span>, el cual contiene <span class="math inline">\(d\)</span> raíces unitarias. A estos procesos también se les conoce como procesos con tendencia estocástica.</p>
+<p>Dada la discusión annterior, a continuación platearemos un resumen de cuales son los dos casos a los cuales nos referiremos como procesos que no son estacionarios en media, pero que si lo son en varianza. Estos casos son:
+<span class="math display">\[\begin{eqnarray}
+    Y_t &amp; = &amp; Y_0 + \delta t + U_t \\
+    Y_t &amp; = &amp; Y_0 + \delta + \sum_{i = 1}^t U_t
+\end{eqnarray}\]</span></p>
+<p>Ambos casos no son estacionarios en media, pero si lo son en varianza. De ambos podemos decir que los choques o innovaciones del término de error tienen un efecto transitorio en el primero, pero permanentes en el segundo.</p>
+</div>
+<div id="pruebas-de-raíces-unitarias" class="section level2">
+<h2><span class="header-section-number">7.2</span> Pruebas de Raíces Unitarias</h2>
+<p>En esta sección plantearemos una serie de pruebas estadísticas para determinar cuando una serie puede ser estacionaria bajo tres posibles casos: (1) estacionariedad al rededor de una tendencia determinística; (2) estacionariedad al rededor de una media, y (3) estacionariedad al rededor del cero.</p>
+</div>
+<div id="dickey---fuller-df" class="section level2">
+<h2><span class="header-section-number">7.3</span> Dickey - Fuller (DF)</h2>
+<p>Partamos de una forma del proceso <span class="math inline">\(Y_t\)</span> dada por:
+<span class="math display">\[\begin{equation}
+    Y_t = \sum_{j = 0}^m \delta_j t^j + X_t
+    \label{UR_DF_G}
+\end{equation}\]</span></p>
+<p>Donde <span class="math inline">\(X_t\)</span> es un <span class="math inline">\(ARMA(p, q)\)</span> con media cero. Esta prueba asume que <span class="math inline">\(m = 1\)</span>, por lo que utilizaremos un modelo del tipo:
+<span class="math display">\[\begin{equation}
+    Y_t = \alpha + \delta t + \rho Y_{t-1} + U_t
+    \label{UR_DF}
+\end{equation}\]</span></p>
+<p>Si, el <span class="math inline">\(AR(1)\)</span> planteado tiene raíz unitaria, es decir, <span class="math inline">\(\rho = 1\)</span>, entonces tendríamos:
+<span class="math display">\[\begin{eqnarray*}
+    Y_t &amp; = &amp; \alpha + \delta t + Y_{t-1} + U_t \\
+    \Delta Y_t &amp; = &amp; \alpha + \delta t + U_t
+\end{eqnarray*}\]</span></p>
+<p>De esta forma, para determinar si una serie tiene raíz unitaria basta con probar la hipótesis nula de que <span class="math inline">\(H_0 : \rho = 1\)</span>, junto con las diferentes combinaciones que impliquen restricciones respecto a <span class="math inline">\(\delta\)</span> y <span class="math inline">\(\alpha\)</span>.</p>
+En resumen, la prueba DF consiste en asumir un modelo general dado por la ecuación () y probar tres especificaciones distintas que serían válidas bajo <span class="math inline">\(H_0 : \rho = 1\)</span>:
+
+<div id="dickey---fuller-aumentada-adf" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Dickey - Fuller Aumentada (ADF)</h3>
+<p>A diferencia de un modelo AR(1) para el caso de una prueba DF como en la ecuación (), en una prueba ADF se asume que el proceso es un AR(p) de la forma (por simplicidad hemos omitido el término constante y el término de tendencia determinística):
+<span class="math display">\[\begin{equation}
+    Y_t = a_1 Y_{t-1} + a_2 Y_{t-2} + \ldots + a_p Y_{t-p} + U_t
+    \label{UR_ADF}
+\end{equation}\]</span></p>
+<p>Haciendo una sustitución de términos similar a las que hemos planteado en otras secciones podemos reexpresar la ecuación () en su versión en diferencias siguiendo el proceso:
+<span class="math display">\[\begin{equation}
+    Y_t = \rho Y_{t-1} + \theta_1 \Delta Y_{t-1} + \theta_2 \Delta Y_{t-2} + \ldots + + \theta_{p-1} \Delta Y_{t-p+1} + U_t 
+\end{equation}\]</span></p>
+<p>Donde <span class="math inline">\(\rho = \theta_0 = \sum_{j = 1}^p a_j\)</span>, <span class="math inline">\(\theta_i = - \sum_{j = i + 1}^p a_j\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p-1\)</span>. Así, si el proceso AR(p) tiene raíz unitaria entonces ceremos que:
+<span class="math display">\[\begin{eqnarray*}
+    1 - a_1 - a_2 - \ldots - a_p &amp; = &amp; 0 \\
+    \rho &amp; = &amp; 1
+\end{eqnarray*}\]</span></p>
+<p>De donde podemos establecer que el modelo general de una prueba ADF será:
+<span class="math display">\[\begin{equation}
+    \Delta Y_{t-1} = \alpha + \beta t + (\rho - 1) Y_{t-1} + \theta_1 \Delta Y_{t-1} + \theta_2 \Delta Y_{t-2} + \ldots + \theta_k \Delta Y_{t-k} + U_t
+\end{equation}\]</span></p>
+Donde <span class="math inline">\(U_t\)</span> es un proceso puramente aleatorio y <span class="math inline">\(k\)</span> es elegido de tal manera que los residuales sean un proceso puramente aleatorio. En resumen, la prueba DF consiste en asumir un modelo general dado por la ecuación (), que incluya constante y tendencia, y probar tres especificaciones distintas que serían válidas bajo <span class="math inline">\(H_0 : \rho = 1\)</span>:
 
 </div>
-<div id="ejemplo-de-cointegración" class="section level2">
-<h2><span class="header-section-number">8.3</span> Ejemplo de cointegración</h2>
-<p>Para ejemplificar el procedimiento de cointegración utilizaremos las series de INPC, Tipo de Cambio, rendimiento de los Cetes a 28 días, IGAE e Índice de Producción Industrial de Estados Unidos. Quizá el marco teórico de la relación entre las variables no sea del todo correcta, pero dejando de lado ese problema estimaremos si las 5 series cointegran.</p>
-En el Scrip Clase 17 de la capeta de GoogleDrive se encuentra el desarrollo de este ejemplo. Por principio, probaremos que todas las series son I(1), lo cual es cierto (ver Scrip para mayores detalles). En la Figura () se muestran las series en niveles y en diferencias, con lo cual ilustramos como es viable que las series sean I(1).
-
-Posteriormente, determinamos cuál es el orden adecuado de un VAR(p) en niveles. En el Cuadro () mostramos los resultados de los criterios de información para determinar el número de rezagos óptimos, el cual resultó en <span class="math inline">\(p = 3\)</span> para los criterios AIC y FPE, <span class="math inline">\(p = 2\)</span> para el criterio HQ y <span class="math inline">\(p = 1\)</span> para el citerio SC. Por lo tanto decidiremos utilizar un VAR(3) con tendencia y constante.
-
-El mismo número de rezagos los utilizaremos para probar la Cointegración ya sea por una estadística de la Traza o por una de el máximo valor propio. En el Scrip llamado Clase 18 que se encuentra en la carpeta de GoogleDrive se ubican todos los resultados citados acontinuación. Derivado de la exploración de los resultados sólo matraremos uno de los caso en que las series cointegran y sólo para el caso de la prueba de la traza. En el Cuadro () reportamos los resultados del Test de Cointegración para un modelo con 3 rezagos.
-
-<p>Los resutados del Cuadro () indican que acptamos la hipótesis nula para el caso de <span class="math inline">\(r \leq 1\)</span> al <span class="math inline">\(5\%\)</span>, por lo que podemos concluir que existe evidencia estadística para probar que existen al menos 1 vector de cointegración. Por lo que dicho vector es:
+<div id="phillips---perron-pp" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Phillips - Perron (PP)</h3>
+<p>Una tercera prueba es la de PP, la cual también está basada en una AR(1) dado por la ecuación:
 <span class="math display">\[\begin{equation}
-    \boldsymbol{\beta} = \left[ 
-    \begin{matrix}
-    1.00000000 \\
-    0.151162436 \\
-    -0.042650912 \\
-    0.163804862 \\
-    0.229295743 \\
-    -0.004350646 \\
-    \end{matrix} \right]
+    Y_t = d \eta + \rho Y_{t-1} + U_t
+    \label{UR_PP}
 \end{equation}\]</span></p>
-<p>Donde el vector esta normalizado para la serie <span class="math inline">\(LINPC_t\)</span>, por lo que concluímos que la relación de largo plazo que encontramos cointegra estará dada por:
-<span class="math display">\[\begin{eqnarray*}
-    LINPC_t &amp; = &amp; -0.151162436 LTC_t + 0.042650912 LCETE28_t \\
-    &amp;  &amp; - 0.163804862 LIGAE_t - 0.229295743 LIPI_t \\
-    &amp;  &amp; + 0.004350646 t
-\end{eqnarray*}\]</span></p>
-Considerando lo anterior, podemos determinar <span class="math inline">\(\hat{U}_t\)</span> para esta ecuación de cointegración. En la Figura () mostramos los residuales estimados. Derivado de la impección visual parecería que estos no son estacionarios, condición que debería ser cierta. De esta forma, una prueba deseable es aplicar todas la pruebas de raíces unitarias a esta serie para mostrar que es I(0). En el Scrip llamado Clase 18 en la carpeta de GoogleDrive se muestran algunas pruebas sobre esta serie y se encuentra que es posible que no sea estacionaria.
+<p>Donde <span class="math inline">\(d\)</span> incluye a cualquiera de los componentes determinísticos como constante y tendencia. Al igual que los casos pasados, la hipótesis a probar era <span class="math inline">\(H_0 : \rho = 1\)</span> contra la alternativa <span class="math inline">\(H_a : \abs{\rho} &lt; 1\)</span>, y asumimos una estructura MA(q) es el término de error de la forma <span class="math inline">\(U_t = \psi(L) \varepsilon_t = \psi_0 \varepsilon_t + \psi_1 \varepsilon_{t-1} + \ldots + \psi_p \varepsilon_{t-p}\)</span>, con <span class="math inline">\(\varepsilon_t\)</span> es un ruido blanco con media cero y varianza <span class="math inline">\(\sigma^2\)</span>. En este modelo se elige el valor <span class="math inline">\(p\)</span> que hace que el componente sea un MA(p). Las tablas estadísticas de PP para esta prueba pueden utilizar una estadística <span class="math inline">\(Z_\tau\)</span> o <span class="math inline">\(Z_\rho\)</span>, las cuales se pueden emplear indistintamente.</p>
+En resumen, la prueba PP consiste en asumir un modelo general dado por la ecuación () y probar dos especificaciones distintas que serían válidas bajo <span class="math inline">\(H_0 : \rho = 1\)</span>, ambas considerando un compenente Drift:
+
+</div>
+<div id="kwiatkowsky---phillips---schmidt---shin-kpss" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Kwiatkowsky - Phillips - Schmidt - Shin (KPSS)</h3>
+<p>La prueba KPSS considera que el proceso es estacionario bajo la hipótesis nula, lo cual hace una diferencia respecto de las anteriores pruebas. El modelo considerado es:
+<span class="math display">\[\begin{equation}
+    Y_t = \delta t + \xi_t + U_t
+\end{equation}\]</span></p>
+<p>Donde <span class="math inline">\(U_t\)</span> es un proceso estacionario y <span class="math inline">\(\xi_t\)</span> es un ruido blanco descrito por la forma: <span class="math inline">\(\xi_t = \xi_{t-1} + \varepsilon_t\)</span>, donde <span class="math inline">\(\varepsilon_t\)</span> es un proceso normalmente distribuido con media cero y varianza <span class="math inline">\(\sigma^2_\varepsilon\)</span>.</p>
+Así, bajo la hipótesis nula <span class="math inline">\(H_0 : \sigma^2_\varepsilon = 0\)</span>, <span class="math inline">\(\xi\)</span> se vuelve una constante y el proceso puede tener una tendencia estacionaria. Dado el planteamiento de la prueba, los valores críticos al 95% son:
+
+</div>
+<div id="ejemplo-con-aplicación-de-todas-las-pruebas-de-raíces-unitarias" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> Ejemplo con aplicación de todas las pruebas de raíces unitarias</h3>
+<p>A continuación, mostraremos como ejemplo la aplicación de las pruebas de raíces unitarias a la serie de Tipo de Cambio en forma logaritmica y de diferencias logaritmicas. Asumamos que determinamos el valor de los rezagos de la prueba con el criterio de <span class="math inline">\(p = int\{ 4 (T/100)^{1/4} \}\)</span>. En la práctica, existen otras formas de determinar el valor de <span class="math inline">\(p\)</span>, como el criterio de AIC, pero es decisión del investigador cual usar.</p>
+En el Cuadro () mostramos los resultados de aplicar las pruebas de raíces unitarias a la serie <span class="math inline">\(LTC_t\)</span>, considerando <span class="math inline">\(p = int \{ 4 (234/100)^{(1/4)} \} = 4\)</span> para aquellas pruebas que requieren de rezagos: ADF, PP y KPSS. Los raultados para todos los modelos se ubican en el Scrip Clase 16 en el GitHub.
 
 
+</div>
 </div>
 </div>
             </section>
@@ -268,8 +343,8 @@ Considerando lo anterior, podemos determinar <span class="math inline">\(\hat{U}
           </div>
         </div>
       </div>
-<a href="procesos-no-estacionarios.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="modelos-univariados-y-multivariados-de-volatilidad.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="procesos-basados-en-vectores-autoregresivos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

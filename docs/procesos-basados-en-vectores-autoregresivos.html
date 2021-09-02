@@ -24,7 +24,7 @@
 <meta name="author" content="Benjamín Oliva &amp; Omar Alfaro-Rivera" />
 
 
-<meta name="date" content="2021-08-31" />
+<meta name="date" content="2021-09-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="desestacionalización-y-filtrado-de-series.html"/>
-<link rel="next" href="cointegración.html"/>
+<link rel="next" href="procesos-no-estacionarios.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -104,20 +104,58 @@
 <li class="chapter" data-level="4.5" data-path="procesos-estacionarios-univariados.html"><a href="procesos-estacionarios-univariados.html#selección-de-las-constantes-p-q-d-en-un-arp-un-maq-un-armap-q-o-un-arimap-d-q"><i class="fa fa-check"></i><b>4.5</b> Selección de las constantes p, q, d en un AR(p), un MA(q), un ARMA(p, q) o un ARIMA(p, d, q)</a></li>
 <li class="chapter" data-level="4.6" data-path="procesos-estacionarios-univariados.html"><a href="procesos-estacionarios-univariados.html#pronósticos"><i class="fa fa-check"></i><b>4.6</b> Pronósticos</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="desestacionalización-y-filtrado-de-series.html"><a href="desestacionalización-y-filtrado-de-series.html"><i class="fa fa-check"></i><b>5</b> Desestacionalización y filtrado de Series</a></li>
-<li class="chapter" data-level="6" data-path="procesos-basados-en-vectores-autoregresivos.html"><a href="procesos-basados-en-vectores-autoregresivos.html"><i class="fa fa-check"></i><b>6</b> Procesos Basados en Vectores Autoregresivos</a></li>
-<li class="chapter" data-level="7" data-path="cointegración.html"><a href="cointegración.html"><i class="fa fa-check"></i><b>7</b> Cointegración</a></li>
-<li class="chapter" data-level="8" data-path="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><a href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><i class="fa fa-check"></i><b>8</b> Modelos multivariados de volatilidad: <span class="math inline">\(M - ARCH\)</span> y <span class="math inline">\(M - GARCH\)</span></a></li>
-<li class="chapter" data-level="9" data-path="modelos-univariados-y-multivariados-de-volatilidad.html"><a href="modelos-univariados-y-multivariados-de-volatilidad.html"><i class="fa fa-check"></i><b>9</b> Modelos Univariados y Multivariados de Volatilidad</a></li>
-<li class="chapter" data-level="10" data-path="modelos-adrl.html"><a href="modelos-adrl.html"><i class="fa fa-check"></i><b>10</b> Modelos ADRL</a></li>
-<li class="chapter" data-level="11" data-path="modelos-de-datos-panel.html"><a href="modelos-de-datos-panel.html"><i class="fa fa-check"></i><b>11</b> Modelos de Datos Panel</a></li>
-<li class="chapter" data-level="12" data-path="otros-modelos-de-series-de-tiempo-no-lineales.html"><a href="otros-modelos-de-series-de-tiempo-no-lineales.html"><i class="fa fa-check"></i><b>12</b> Otros Modelos de Series de Tiempo No lineales</a></li>
+<li class="chapter" data-level="5" data-path="desestacionalización-y-filtrado-de-series.html"><a href="desestacionalización-y-filtrado-de-series.html"><i class="fa fa-check"></i><b>5</b> Desestacionalización y filtrado de Series</a><ul>
+<li class="chapter" data-level="5.1" data-path="desestacionalización-y-filtrado-de-series.html"><a href="desestacionalización-y-filtrado-de-series.html#motivación"><i class="fa fa-check"></i><b>5.1</b> Motivación</a></li>
+<li class="chapter" data-level="5.2" data-path="desestacionalización-y-filtrado-de-series.html"><a href="desestacionalización-y-filtrado-de-series.html#filtro-hodrick-prescott"><i class="fa fa-check"></i><b>5.2</b> Filtro Hodrick-Prescott</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="procesos-basados-en-vectores-autoregresivos.html"><a href="procesos-basados-en-vectores-autoregresivos.html"><i class="fa fa-check"></i><b>6</b> Procesos Basados en Vectores Autoregresivos</a><ul>
+<li class="chapter" data-level="6.1" data-path="procesos-basados-en-vectores-autoregresivos.html"><a href="procesos-basados-en-vectores-autoregresivos.html#causalidad-de-granger"><i class="fa fa-check"></i><b>6.1</b> Causalidad de Granger</a></li>
+<li class="chapter" data-level="6.2" data-path="procesos-basados-en-vectores-autoregresivos.html"><a href="procesos-basados-en-vectores-autoregresivos.html#definición-y-representación-del-sistema-o-modelo-varp"><i class="fa fa-check"></i><b>6.2</b> Definición y representación del Sistema o Modelo VAR(p)</a></li>
+<li class="chapter" data-level="6.3" data-path="procesos-basados-en-vectores-autoregresivos.html"><a href="procesos-basados-en-vectores-autoregresivos.html#análisis-de-impulso-respuesta"><i class="fa fa-check"></i><b>6.3</b> Análisis de Impulso-Respuesta</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html"><i class="fa fa-check"></i><b>7</b> Procesos No Estacionarios</a><ul>
+<li class="chapter" data-level="7.1" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#definición-y-formas-de-no-estacionariedad"><i class="fa fa-check"></i><b>7.1</b> Definición y formas de No Estacionariedad</a></li>
+<li class="chapter" data-level="7.2" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#pruebas-de-raíces-unitarias"><i class="fa fa-check"></i><b>7.2</b> Pruebas de Raíces Unitarias</a></li>
+<li class="chapter" data-level="7.3" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#dickey---fuller-df"><i class="fa fa-check"></i><b>7.3</b> Dickey - Fuller (DF)</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#dickey---fuller-aumentada-adf"><i class="fa fa-check"></i><b>7.3.1</b> Dickey - Fuller Aumentada (ADF)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#phillips---perron-pp"><i class="fa fa-check"></i><b>7.3.2</b> Phillips - Perron (PP)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#kwiatkowsky---phillips---schmidt---shin-kpss"><i class="fa fa-check"></i><b>7.3.3</b> Kwiatkowsky - Phillips - Schmidt - Shin (KPSS)</a></li>
+<li class="chapter" data-level="7.3.4" data-path="procesos-no-estacionarios.html"><a href="procesos-no-estacionarios.html#ejemplo-con-aplicación-de-todas-las-pruebas-de-raíces-unitarias"><i class="fa fa-check"></i><b>7.3.4</b> Ejemplo con aplicación de todas las pruebas de raíces unitarias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><a href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><i class="fa fa-check"></i><b>8</b> Modelos multivariados de volatilidad: <span class="math inline">\(M - ARCH\)</span> y <span class="math inline">\(M - GARCH\)</span></a><ul>
+<li class="chapter" data-level="8.1" data-path="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><a href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html#definición-y-propiedades-del-proceso-de-cointegración"><i class="fa fa-check"></i><b>8.1</b> Definición y propiedades del proceso de cointegración</a></li>
+<li class="chapter" data-level="8.2" data-path="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><a href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html#cointegración-para-modelos-de-más-de-una-ecuación-o-para-modelos-basados-en-vectores-autoregresivos"><i class="fa fa-check"></i><b>8.2</b> Cointegración para modelos de más de una ecuación o para modelos basados en Vectores Autoregresivos</a></li>
+<li class="chapter" data-level="8.3" data-path="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html"><a href="modelos-multivariados-de-volatilidad-m-arch-y-m-garch.html#ejemplo-de-cointegración"><i class="fa fa-check"></i><b>8.3</b> Ejemplo de cointegración</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="modelos-univariados-y-multivariados-de-volatilidad.html"><a href="modelos-univariados-y-multivariados-de-volatilidad.html"><i class="fa fa-check"></i><b>9</b> Modelos Univariados y Multivariados de Volatilidad</a><ul>
+<li class="chapter" data-level="9.1" data-path="modelos-univariados-y-multivariados-de-volatilidad.html"><a href="modelos-univariados-y-multivariados-de-volatilidad.html#modelos-arch-y-garch-univariados"><i class="fa fa-check"></i><b>9.1</b> Modelos ARCH y GARCH Univariados</a></li>
+<li class="chapter" data-level="9.2" data-path="modelos-univariados-y-multivariados-de-volatilidad.html"><a href="modelos-univariados-y-multivariados-de-volatilidad.html#modelos-arch-y-garch-multivariados"><i class="fa fa-check"></i><b>9.2</b> Modelos ARCH y GARCH Multivariados</a></li>
+<li class="chapter" data-level="9.3" data-path="modelos-univariados-y-multivariados-de-volatilidad.html"><a href="modelos-univariados-y-multivariados-de-volatilidad.html#pruebas-para-detectar-efectos-arch"><i class="fa fa-check"></i><b>9.3</b> Pruebas para detectar efectos ARCH</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="modelos-adrl.html"><a href="modelos-adrl.html"><i class="fa fa-check"></i><b>10</b> Modelos ADRL</a><ul>
+<li class="chapter" data-level="10.1" data-path="modelos-adrl.html"><a href="modelos-adrl.html#teoría"><i class="fa fa-check"></i><b>10.1</b> Teoría</a></li>
+<li class="chapter" data-level="10.2" data-path="modelos-adrl.html"><a href="modelos-adrl.html#ejemplo"><i class="fa fa-check"></i><b>10.2</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="modelos-de-datos-panel.html"><a href="modelos-de-datos-panel.html"><i class="fa fa-check"></i><b>11</b> Modelos de Datos Panel</a><ul>
+<li class="chapter" data-level="11.1" data-path="modelos-de-datos-panel.html"><a href="modelos-de-datos-panel.html#motivación-1"><i class="fa fa-check"></i><b>11.1</b> Motivación</a></li>
+<li class="chapter" data-level="11.2" data-path="modelos-de-datos-panel.html"><a href="modelos-de-datos-panel.html#pruebas-de-raíces-unitarias-en-panel"><i class="fa fa-check"></i><b>11.2</b> Pruebas de Raíces Unitarias en Panel</a></li>
+<li class="chapter" data-level="11.3" data-path="modelos-de-datos-panel.html"><a href="modelos-de-datos-panel.html#panel-var"><i class="fa fa-check"></i><b>11.3</b> Panel VAR</a></li>
+<li class="chapter" data-level="11.4" data-path="modelos-de-datos-panel.html"><a href="modelos-de-datos-panel.html#cointegración"><i class="fa fa-check"></i><b>11.4</b> Cointegración</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="otros-modelos-de-series-de-tiempo-no-lineales.html"><a href="otros-modelos-de-series-de-tiempo-no-lineales.html"><i class="fa fa-check"></i><b>12</b> Otros Modelos de Series de Tiempo No lineales</a><ul>
+<li class="chapter" data-level="12.1" data-path="otros-modelos-de-series-de-tiempo-no-lineales.html"><a href="otros-modelos-de-series-de-tiempo-no-lineales.html#modelos-de-cambio-de-régimen"><i class="fa fa-check"></i><b>12.1</b> Modelos de cambio de régimen</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="otros-modelos-de-series-de-tiempo-no-lineales.html"><a href="otros-modelos-de-series-de-tiempo-no-lineales.html#regímenes-determinados-por-información-observable"><i class="fa fa-check"></i><b>12.1.1</b> Regímenes determinados por información observable</a></li>
+<li class="chapter" data-level="12.1.2" data-path="otros-modelos-de-series-de-tiempo-no-lineales.html"><a href="otros-modelos-de-series-de-tiempo-no-lineales.html#regímenes-determinados-por-variables-no-observables"><i class="fa fa-check"></i><b>12.1.2</b> Regímenes determinados por variables no observables</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="apendice-i.html"><a href="apendice-i.html"><i class="fa fa-check"></i><b>13</b> Apendice I</a><ul>
 <li class="chapter" data-level="13.1" data-path="apendice-i.html"><a href="apendice-i.html#estimador-de-mínimos-cuadrados-ordinarios-y-el-análisis-clásico-de-regresión"><i class="fa fa-check"></i><b>13.1</b> Estimador de Mínimos Cuadrados Ordinarios y el análisis clásico de regresión</a></li>
 <li class="chapter" data-level="13.2" data-path="apendice-i.html"><a href="apendice-i.html#estimación-por-el-método-de-máxima-verosimilitud-mv"><i class="fa fa-check"></i><b>13.2</b> Estimación por el método de Máxima Verosimilitud (MV)</a></li>
 <li class="chapter" data-level="13.3" data-path="apendice-i.html"><a href="apendice-i.html#métricas-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>13.3</b> Métricas de bondad de ajuste</a></li>
 <li class="chapter" data-level="13.4" data-path="apendice-i.html"><a href="apendice-i.html#pruebas-de-hipótesis"><i class="fa fa-check"></i><b>13.4</b> Pruebas de Hipótesis</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="apéndice-práctico.html"><a href="apéndice-práctico.html"><i class="fa fa-check"></i><b>14</b> Apéndice Práctico</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/benjov/Series-de-Tiempo-2021" target="blank">Repositorio del Curso</a></li>
 
@@ -141,6 +179,173 @@
 <div id="procesos-basados-en-vectores-autoregresivos" class="section level1">
 <h1><span class="header-section-number">Capítulo 6</span> Procesos Basados en Vectores Autoregresivos</h1>
 
+<p>En este capítulo romperemos el supuesto de que el análisis es univariado, ya que introduciremos la posibilidad de que los procesos generadores de datos compartan información entre dos o más series. Como primer aproximación desarrollaremos el concepto de Causalidad de Granger. Mediante esta metodología discutiremos cuando dos series se causan estadísticamente. Posteriormente, introduciremos una técnica más sofisticada conocida como la metodología de Vectores Autoregresivos (VAR), la cual es una generalización de los procesos AR que analizamos al principio del curso.</p>
+<div id="causalidad-de-granger" class="section level2">
+<h2><span class="header-section-number">6.1</span> Causalidad de Granger</h2>
+<p>Hasta ahora hemos supuesto que una serie puede ser explicada únicamente con la información contenida en ella misma. No obstante, en adelante trataremos de analizar el caso en el que buscamos determinar relaciones entre variables y cómo el comportamiento de una serie influye en las demás. Algunas relaciones más importantes son las llamadas causalidad. En este caso analizaremos el procedimiento de Granger (1969), conocido como causalidad de Granger. En adelante asumiremos que las series involucradas son debílmente estacionarias.</p>
+<p>Sean <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> dos series debílmente estacionarias. Definamos a <span class="math inline">\(I_t\)</span> un conjunto de toda la información disponible hasta el momento <span class="math inline">\(t\)</span>. Asimismo, digamos que <span class="math inline">\(\overline{X}_t\)</span> y <span class="math inline">\(\overline{Y}_t\)</span> son los conjuntos de toda la información disponible (actual y pasada) de <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>, respectivamente. Es decir:
+<span class="math display">\[\begin{eqnarray}
+    \overline{X}_t &amp; := &amp; \{ X_t, X_{t-1}, X_{t-2}, \ldots \} \\
+    \overline{Y}_t &amp; := &amp; \{ Y_t, Y_{t-1}, Y_{t-2}, \ldots \} \\
+    I_t &amp; := &amp; \overline{X}_t + \overline{Y}_t
+\end{eqnarray}\]</span></p>
+Adicionalmnete, definamos <span class="math inline">\(\sigma^2(.)\)</span> como la varianza del término de error estimado de una regresión dada. Dicho lo anterior, decimos que:
+
+La definción anterior aplica de igual forma si se reemplaza a <span class="math inline">\(X\)</span> por <span class="math inline">\(Y\)</span> y a <span class="math inline">\(Y\)</span> por <span class="math inline">\(X\)</span>, respectivamente. De acuerdo a la definición anterior, existen 5 diferentes posibilidades de relaciones causales entre las dos series:
+
+<p>Por lo anterior, representaremos mediante una <span class="math inline">\(AR(p)\)</span> con variables exógenas lo siguiente:
+<span class="math display">\[\begin{equation}
+    A(L) 
+    \begin{bmatrix}
+    Y_t \\ X_t
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    a_{11}(L) &amp; a_{12}(L) \\ a_{21}(L) &amp; a_{22}(L)
+    \end{bmatrix}
+    \begin{bmatrix}
+    Y_t \\ X_t
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    V_t \\ U_t
+    \end{bmatrix}
+    \label{Granger_Eq}
+\end{equation}\]</span></p>
+<p>O en su versión <span class="math inline">\(MA(q)\)</span> con variables exógenas:
+<span class="math display">\[\begin{equation}
+    \begin{bmatrix}
+    Y_t \\ X_t
+    \end{bmatrix}
+    =
+    B(L)
+    \begin{bmatrix}
+    V_t \\ U_t
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    b_{11}(L) &amp; b_{12}(L) \\ b_{21}(L) &amp; b_{22}(L)
+    \end{bmatrix}
+    \begin{bmatrix}
+    V_t \\ U_t
+    \end{bmatrix}
+\end{equation}\]</span></p>
+<p>Para determinar el test de causalidad utilizaremos una especificación similar a la de la ecuación (). Para probar si <span class="math inline">\(X\)</span> causa a <span class="math inline">\(Y\)</span> consideraremos la siguiente regresión:
+<span class="math display">\[\begin{equation}
+    Y_t = \alpha_0 + \sum^{k_1}_{k = 1} a^k_{11} Y_{t-k} + \sum^{k_2}_{k = k_0} a^k_{12} X_{t-k} + U_{1,t}
+\end{equation}\]</span></p>
+<p>Donde <span class="math inline">\(k_0 = 1\)</span> y, en general, se asume que <span class="math inline">\(k_1 = k_2\)</span>. Asimismo, el valor de estas constantes se puede determinar con el cirterio de Akaike (o cualquier otro criterio de información). No obstante, algunos autores sugieren que una buena práctica es considerar valores de <span class="math inline">\(k_1\)</span> y <span class="math inline">\(k_2\)</span> 4, 8, 12 y 16.</p>
+<p>Dicho lo anterior, el test de causalidad de Granger se establece con una prueba F (similar a la definiada en el Apéndice de estas notas), en la cual se prueba la siguiente hipótesis nula:
+<span class="math display">\[\begin{equation}
+    H_0: a^1_{12} = a^2_{12} = \ldots = a^{k2}_{12} = 0
+\end{equation}\]</span></p>
+Ahora veámos un ejemplo. Consideremos como variables analizadas al Índice Nacional de Precios al Consumidor (<span class="math inline">\(INPC_t\)</span>), al Tipo de Cambio (<span class="math inline">\(TDC_t\)</span>) y al rendimiento anual de los Cetes a 28 días (<span class="math inline">\(CETE28_t\)</span>), todas desestacionalizadas para el periodo de enero de 2000 a julio de 2019. Dado que la metodología de Granger supone que las series son estacionarias, utilizaremos las diferencias logaritmicas de cada una de las tres series (es decir, utilizaremos una transformación del tipo <span class="math inline">\(ln(X_t) - ln(X_{t-1})\)</span>). La Figura () muestra las series en su transformación de diferencias logarítmicas.
+
+Por simplicidad, en el Cuadro () se muestra el resultado de aplicar el test de Granger a diferentes especificaciones, con rezagos 4, 8, 12 y 16, sólo para la serie de Tipo de Cambio en diferencias logarítmicas. En cada una de las pruebas se compara el modelo considerado como regresor a la variable que es candidata de causar, respecto del modelo si considerar a dicha variable.
+
+<p>De acuerdo con el Cuadro (), podemos concluir que existe información estadísticamente significativa para concluir que la inflación causa a la tasa de depreciación cambiaria, ambas medidas como las diferencias logaritmicas. El resto de los resultados para las otras combinaciones de causalidad se encuentran en el Scrip llamado Clase 13 ubicado en el repositorio de GitHub.</p>
+</div>
+<div id="definición-y-representación-del-sistema-o-modelo-varp" class="section level2">
+<h2><span class="header-section-number">6.2</span> Definición y representación del Sistema o Modelo VAR(p)</h2>
+<p>En esta sección ampliaremos la discusión planteada en el apartado anterior. En el sentido de que en la sección pasada nuestra discusión se limito al análisis de causalidad entre dos variables a la vez, que si bien es posible extenderlo a más variables es un procedimiento limitado a casos particulares por las siguientes razones.</p>
+<p>El procediento de causalidad de Granger supone que es posible identificar un sistema de ecuaciones que debe conformarse una vez que se ha identificado el sentido de la causalidad. Así, el proceso anterior necesita del conocimiento previo de las relaciones que existen entre las varibles.</p>
+<p>Adicionalmente, no resuleve el problema más general qué esta relacionado con cómo identificar la causalidad cuando se tienen múltiples variables con múltiples sentidos de causalidad. En esta sección analizaremos una mejor aproximación al probelma de cómo identificar la causalidad múltiple. Por lo tanto, como mécanismo para solucionar el problema planteado, analizaremos el caso de un Sistema o Modelo de Vectores Autoregresivos conocido como VAR.</p>
+<p>El primer supuesto del que partiremos es que existe algún grado de endogenidad entre las variables considerdas en el análisis. Adicionalmente, el segundo supuesto que estableceremos es que requerimos que las variables que tengamos consideradas sean estacionarias.</p>
+<p>Por lo anterior diremos que un VAR es un procedimiento que sigue fundado en el supuesto de que las variables consideredas son estacionarias, sin que hasta el momento hallamos podido establecer un mécanismo de detección de dicha estacionariedad. Así, hasta este momento del curso hemos pasado de modelo univariados a modelo múltivariados, pero no hemos podido dejar de asumir que las series son estacionarias.</p>
+<p>Ahora bien, iniciaremos con el establecimiento de la representación del proceso. Digamos que tenemos un proceso estocástico <span class="math inline">\(\mathbf{X}\)</span> estacionario de dimensión <span class="math inline">\(k\)</span>. De esta forma la expresión reducida del modelo o el proceso <span class="math inline">\(VAR(p)\)</span> estará dado por:
+<span class="math display">\[\begin{equation}
+    \mathbf{X}_t = \mathbf{\delta} + A_1 \mathbf{X}_{t-1} + A_2 \mathbf{X}_{t-2} + \ldots + A_p \mathbf{X}_{t-p} + \mathbf{U}_{t}
+    \label{VAR_p}
+\end{equation}\]</span></p>
+<p>Donde cada uno de las <span class="math inline">\(A_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p\)</span>, son matrices cuadradas de dimensión <span class="math inline">\(k\)</span> y <span class="math inline">\(\mathbf{U}_t\)</span> representa un vector de dimensión <span class="math inline">\(k \times 1\)</span> con los residuales en el momento del tiempo <span class="math inline">\(t\)</span> que son un proceso pueramente aleatorio. También se incorpora un vector de términos constantes denominado como <span class="math inline">\(\mathbf{\delta}\)</span>, el cual es de dimensión <span class="math inline">\(k \times 1\)</span>.</p>
+<p>Así, la ecuación () supone la siguiente estructura de vectores:
+<span class="math display">\[\begin{equation*}
+    \mathbf{X}_t = 
+    \begin{bmatrix}
+    X_{1t} \\ X_{2t} \\ \vdots \\ X_{kt}
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Para cualquier <span class="math inline">\(i = 1, 2, \ldots, p\)</span>:
+<span class="math display">\[\begin{equation*}
+    \mathbf{X}_{t-i} = 
+    \begin{bmatrix}
+    X_{1t-i} \\ X_{2t-i} \\ \vdots \\ X_{kt-i}
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+    \mathbf{\delta} = 
+    \begin{bmatrix}
+    \delta_{1} \\ \delta_{2} \\ \vdots \\ \delta_{k}
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>También, la ecuación () supone que cada matriz <span class="math inline">\(A_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots, p\)</span>, esta definida de la siguiente forma:
+<span class="math display">\[\begin{equation*}
+    \mathbf{A}_i = 
+    \begin{bmatrix}
+    a^{(i)}_{11} &amp; a^{(i)}_{12} &amp; \ldots &amp; a^{(i)}_{1k} \\ a^{(i)}_{21} &amp; a^{(i)}_{22} &amp; \ldots &amp; a^{(i)}_{2k} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a^{(i)}_{k1} &amp; a^{(i)}_{k2} &amp; \ldots &amp; a^{(i)}_{kk}
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Retomando la ecuación () y considerando que podemos ocupar el operador rezago <span class="math inline">\(L^j\)</span> de forma analóga al caso del modelo <span class="math inline">\(AR(p)\)</span>, pero aplicado a un vector, tenemos las siguientes ecuaciones:
+<span class="math display">\[\begin{eqnarray}
+    \mathbf{X}_t - A_1 \mathbf{X}_{t-1} - A_2 \mathbf{X}_{t-2} - \ldots - A_p \mathbf{X}_{t-p} &amp; = &amp; \mathbf{\delta} + \mathbf{U}_{t} \nonumber \\
+    \mathbf{X}_t - A_1 L \mathbf{X}_{t} - A_2 L^2 \mathbf{X}_{t} - \ldots - A_p L^p \mathbf{X}_{t-p} &amp; = &amp; \mathbf{\delta} + \mathbf{U}_{t} \nonumber \\
+    (I_k - A_1 L - A_2 L^2 - \ldots - A_p L^p) \mathbf{X}_t &amp; = &amp; \mathbf{\delta} + \mathbf{U}_{t} \nonumber \\
+    \mathbf{A}(L) \mathbf{X}_t &amp; = &amp; \mathbf{\delta} + \mathbf{U}_{t}
+    \label{VAR_Corto}
+\end{eqnarray}\]</span></p>
+Adicionalmente, requeriremos que dado que <span class="math inline">\(\mathbf{U}_t\)</span> es un proceso pueramente aleatorio, este debe cumplir con las siguientes condiciones:
+
+<p>Las ecuaciones () y () significan que los residuales <span class="math inline">\(\mathbf{U}_t\)</span> pueden estar correlacionados entre ellos solo en el caso de que la información sea contemporánea, pero no tienen información en común entre residuales de otros periodos.</p>
+<p>Al igual que en el caso del modelo o especificación <span class="math inline">\(AR(p)\)</span> en la especificación del modelo <span class="math inline">\(VAR(p)\)</span> existen condiciones de estabilidad. Dichas condiciones están dadas por lo siguiente, definamos el siguiente polinomio que resulta de tomar la matriz <span class="math inline">\(\mathbf{A}(L)\)</span> en la ecuación ():
+<span class="math display">\[\begin{equation}
+    Det[I_t - A_1 z - A_2 z^2 - \ldots - A_p z^p] \neq 0
+\end{equation}\]</span></p>
+<p>Donde las raíces del polinomio cumplen que <span class="math inline">\(|z| \leq 1\)</span>, es decir, se ubican dentro del circulo unitario.</p>
+<p>La ecuación () puede ser rexpresada en una forma similar al un proceso de MA. Al respecto, de forma similar a la siguiente ecuación podemos construir un modelo <span class="math inline">\(VARMA(p,q)\)</span>, el cual no estudiamos es este curso.</p>
+<p>Reromando el primer planteamiento, podemos escribir:
+<span class="math display">\[\begin{eqnarray}
+    \mathbf{X}_t &amp; = &amp; \mathbf{A}^{-1}(L) \delta + \mathbf{A}^{-1}(L) \mathbf{U}_t \nonumber \\
+    &amp; = &amp; \mu + \beta(L) \mathbf{U}_t
+    \label{VARMA_q}
+\end{eqnarray}\]</span></p>
+<p>Por el lado de las matrices que representan la autocovarianza, estás resultan de resolver lo siguiente:
+<span class="math display">\[\begin{equation}
+    \Gamma_X(\tau) = E[(\mathbf{X}_t - \mu)(\mathbf{X}_{t-\tau} - \mu)&#39;] 
+\end{equation}\]</span></p>
+<p>Ahora, sin pérdida de generalidad digamos que la especificación VAR(p) en la ecuación () no tiene constante, por lo que <span class="math inline">\(\delta = 0\)</span>, lo que implica que <span class="math inline">\(\mu = 0\)</span>. De esta forma las matrices de autocovarianza resultan de:
+<span class="math display">\[\begin{eqnarray*}
+    \Gamma_X(\tau) &amp; = &amp; E[(\mathbf{X}_t)(\mathbf{X}_{t-\tau})&#39;] \\
+    &amp; = &amp; A_1 E[(\mathbf{X}_{t-1})(\mathbf{X}_{t-\tau})&#39;] + A_2 E[(\mathbf{X}_{t-2})(\mathbf{X}_{t-\tau})&#39;] \\
+    &amp;   &amp; + \ldots + A_p E[(\mathbf{X}_{t-p})(\mathbf{X}_{t-\tau})&#39;] + E[(\mathbf{U}_t(\mathbf{X}_{t-\tau})&#39;]
+\end{eqnarray*}\]</span></p>
+Finalmente, al igual que en el caso <span class="math inline">\(AR(p)\)</span> requerimos de una métrica que nos permita determinar el número de rezagos óptimo <span class="math inline">\(p\)</span> en el <span class="math inline">\(VAR(p)\)</span>. Así, establecemos criterios de información similares a los del <span class="math inline">\(AR(p)\)</span> dados por:
+
+Ahora veámos un ejemplo de estimación de <span class="math inline">\(VAR(p)\)</span>. Para el ejemplo utilizaremos las series de INPC, Tipo de CAmbio, rendimiento de los Cetes a 28 días, el IGAE y el Índice de Producción Industrial de los Estados Unidos, todas desestacionalizadas y para el período de enero de 2000 a julio de 2019. Dado que el supuesto estacionariedad sigue presente en nuestro análisis, emplearemos cada una de las series en su versión de diferencias logaritmicas. La Figura () muestra las series referidas.
+
+<p>Dicho lo anterior, a continuación mostraremos la tabla que resume el valor de los distintos criterios de información una especificación de un <span class="math inline">\(VAR(p)\)</span> con constante. Notése que es posible especificar un <span class="math inline">\(VAR(p)\)</span> con tendencia, caso que no aplica hasta este momento, ya que nuestro análisis de estacionariedad es claro respecto a la media constante (más adelante relajaremos este supuesto), lo cual elimina la poisiblidad de incluir una tendencia.</p>
+En el Cuadro () reportamos los resultados de aplicar una prueba de criterios de información para diferentes valores de reagos. Del cual se concluye que el número óptimo de residuales es 2 (según el crietrio AIC y el FPE) y 1 (según el criterio HQ y el SC). Recordemos que es común que el criterio AIC siempre reporte el mayor valor de rezagos, por lo que es una buena práctica utilizarlo como referente principal.
+
+De esta forma, justificamos la estimación de un <span class="math inline">\(VAR(2)\)</span>. Los resultados del mismo se repotartan en los siguientes cuadros, en los que se reporta el resultado de una de las ecuaciones. Los resultados restantes se encuentran en el Scrip Clase 14 que se encuentra en repositorio de GitHub. Primero mostraremos los resutlados de las raíces del polinomio caracteristico en el Cuadro (), seguido de un cuadro para la ecuación del IGAE en el Cuadro ()(por simplicidad se omiten las otras cuatro ecuaciones del VAR(2)), y del Cuadro () con la matriz <span class="math inline">\(\mathbf{\Sigma}_{\hat{U}\hat{U}}\)</span> estimada del VAR.
+
+
+
+Finalmente, en el Cuadro () reportamos las pruebas de diagnóstico del VAR(2). Incluímos las pruebas de normalidad, autocorrelación parcial y de heterocedásticidad.
+
+</div>
+<div id="análisis-de-impulso-respuesta" class="section level2">
+<h2><span class="header-section-number">6.3</span> Análisis de Impulso-Respuesta</h2>
+<p>Una de las grandes ventajas que aporta el análisis de los modelos VAR es el análisis de Impulso-Respuesta. Dicho análisis busca cuantificar el efecto que tiene en <span class="math inline">\(\mathbf{X}_t\)</span> una innovación o cambio en los residuales de cualquiera de las variables en un momento definido. Partamos dela ecuación () de forma que tenemos:
+<span class="math display">\[\begin{eqnarray}
+    \mathbf{X}_t &amp; = &amp; \mathbf{A}^{-1}(L) \delta + \mathbf{A}^{-1}(L) \mathbf{U}_t \nonumber \\
+    &amp; = &amp; \mu + \mathbf{B}(L) \mathbf{U}_t \nonumber \\
+    &amp; = &amp; \mu + \Psi_0 \mathbf{U}_t + \Psi_1 \mathbf{U}_{t-1} + \Psi_2 \mathbf{U}_{t-2} + \Psi_3 \mathbf{U}_{t-3} + \ldots
+\end{eqnarray}\]</span></p>
+<p>Donde <span class="math inline">\(\Psi_0 = I\)</span> y cada una de las <span class="math inline">\(\Psi_i = - \mathbf{B}_i\)</span>, <span class="math inline">\(i = 1, 2, \ldots\)</span>. De esta forma se verifica el efecto que tiene en <span class="math inline">\(\mathbf{X}_t\)</span> cada las innovaciones pasadas. Por lo que el análisis de Impulso-Respuesta cuantifica el efecto de cada una de esas matrices en las que hemos descompuesto a <span class="math inline">\(\mathbf{B}(L)\)</span>.</p>
+Retomando el modelo <span class="math inline">\(VAR(2)\)</span> anteriormente estimado, en el Cuadro () reportamos las gráficas de Impulso-respuesta de la serie <span class="math inline">\(DLTC_t\)</span> ante cambios en los residuales del resto de las series y de la propia serie.
+
+<p>Los resultados muestran que la respuesta de <span class="math inline">\(DLTC_t\)</span> ante impulsos en los términos de error fue estadísticamente significativo sólo para alguunos de los casos y en periodos cortos de tiempo. El resto de los resultados de Impulso-Respuesta se encuentra en el Scrip llamado Clase 15 que se ubica en el repositorio de GitHub.</p>
+
+</div>
 </div>
             </section>
 
@@ -148,7 +353,7 @@
         </div>
       </div>
 <a href="desestacionalización-y-filtrado-de-series.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="cointegración.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="procesos-no-estacionarios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
