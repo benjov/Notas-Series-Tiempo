@@ -1,4 +1,4 @@
-# Elementos de Ecuaciones en Diferencias
+# Elementos de Ecuaciones en Diferencia
 
 ## a) Ecuaciones en Diferencia para procesos deterministas
 
