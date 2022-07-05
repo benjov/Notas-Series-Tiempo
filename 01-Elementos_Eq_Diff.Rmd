@@ -6,9 +6,9 @@ En el capítulo previo se hizó una introducción al concepto de series de tiemp
 
 Para tales efectos, se desarrollará una introducción al concepto de ecuaciones en diferencia. Así, las preguntas que se pretende responder son:
 
-  a) ¿Cuál es la solución de la ecuación en diferencia que se estudia?
+1. ¿Cuál es la solución de la ecuación en diferencia que se estudia?
 
-  b)¿Cuáles son las condiciones para que un proceso estocástico, representado mediante una ecuación en diferencia, llegue a alcanzar un punto de equilibrio en el largo plazo?
+2. ¿Cuáles son las condiciones para que un proceso estocástico, representado mediante una ecuación en diferencia, llegue a alcanzar un punto de equilibrio en el largo plazo?
 
 El término de _ecuación en diferencia_ sirve para denominar un proceso similar o equivalente dentro de las ecuaciones diferenciales, dentro del cual se consideran a un conjunto de variables que están en función del tiempo. Así, si consideramos al tiempo como una variable continua, es decir, consideramos una variable $Z(t)$, podemos expresar las siguientes expresiones para la ecuación diferencial:
 
@@ -42,7 +42,7 @@ El primer caso que se suele estudiar en relación a Ecuaciones en Diferencia es 
     (\#eq:EDPO)
 \end{equation}
 
-Donde, $t = \ldots, -2, -1, 0, 1, 2, \ldots$, y $a_0$ y $a_1 \neq 0$ son números reales constantes. De (\@ref(eq:EDPO) podememos despejar la variable $Z_{t-1}$ y obtener una forma de ecuación en diferencia:
+Donde, $t = \ldots, -2, -1, 0, 1, 2, \ldots$, y $a_0$ y $a_1 \neq 0$ son números reales constantes. De \@ref(eq:EDPO) podememos despejar la variable $Z_{t-1}$ y obtener una forma de ecuación en diferencia:
 \begin{equation}
     Z_t - a_1 Z_{t-1} = a_0
     (\#eq:EDPO2)
@@ -121,7 +121,7 @@ En adelante trabajaremos con ecuaciones en las que la variable $Z$ se encuentra 
 
 Por lo que diremos que en adelante el curso versará sobre ecuaciones en diferencia lineales y de cualquier orden $p$. 
 
-Retomando la ecuación (\ref{SUM}) y considerando la parte de la suma de los términos de $a^i_1$, de tal forma que buscaremos dar una expresión más compresible a dicho término. Definamos la siguiente expresión como:
+Retomando la ecuación \@ref(eq:SUM) y considerando la parte de la suma de los términos de $a^i_1$, de tal forma que buscaremos dar una expresión más compresible a dicho término. Definamos la siguiente expresión como:
 \begin{equation}
     S_{t-1} = \sum^{t-1}_{i = 0}{a^i_1}
     (\#eq:St1)
@@ -170,7 +170,7 @@ Retomemos ahora el caso general descrito en la ecuación \@ref(eq:PROC01) y dete
     (\#eq:SUMINF)
 \end{eqnarray}
 
-Donde claramente es necesario que $|a_1| < 1$. Por lo tanto, sólo faltaría determinar el valor de la constante $s$ en la ecuación (\ref{PROC01}) de la siguiente forma, supongamos que observamos el proceso en el momento inicial, por lo que es posible determinar el valor de la constante conociendo el valor inicial del proceso como sigue:
+Donde claramente es necesario que $|a_1| < 1$. Por lo tanto, sólo faltaría determinar el valor de la constante $s$ en la ecuación \@ref(eq:PROC01) de la siguiente forma, supongamos que observamos el proceso en el momento inicial, por lo que es posible determinar el valor de la constante conociendo el valor inicial del proceso como sigue:
 \begin{equation}
     Z_0 = a_0 \frac{1}{1 - a_1} + s
 (\#eq:Z0)
@@ -189,7 +189,7 @@ Así, juntando la ecuación \@ref(eq:PROC01) y ecuación \@ref(eq:eqs) tenemos l
 (\#eq:SOLGEN)
 \end{equation}
 
-No debe pasar desapercibido que está solución es la misma que la mostrada en la ecuación (\@ref(eq:SOLITER), por lo que en realidad ambas ecuaciones son una solución general indistintamente entre las ecuaciones \@ref(eq:SOLITER) y \@ref(eq:SOL_GEN). Ambas convergen a la expresión como la ecuación \@ref(eq:trayec), con la misma condición de convergencia $|a_1| < 1$. Para ilustrar estas ecuaciones veámos algunos ejemplos al respecto. 
+No debe pasar desapercibido que está solución es la misma que la mostrada en la ecuación (\@ref(eq:SOLITER), por lo que en realidad ambas ecuaciones son una solución general indistintamente entre las ecuaciones \@ref(eq:SOLITER) y \@ref(eq:SOLGEN). Ambas convergen a la expresión como la ecuación \@ref(eq:trayec), con la misma condición de convergencia $|a_1| < 1$. Para ilustrar estas ecuaciones veámos algunos ejemplos al respecto. 
 
 Consideremos que tenemos un proceso $Z_t$ que es descrito por una ecuación en diferencia lineal de primer orden dada por:
 
@@ -210,14 +210,14 @@ Donde asumiremos que el valor inicial es $Z_0 = 10$ y que la expresión debe con
 (\#eq:ex3)
 \end{equation}
 
-Siguiendo la expresión mostrada en la ecuación (\ref{SOL_GEN}), obtenemos:
+Siguiendo la expresión mostrada en la ecuación \@ref(eq:SOLGEN), obtenemos:
 
 \begin{equation}
     Z_t = 2 \left( \frac{1 - (-0.5)^{t}}{1 + 0.5} \right) + (-0.5)^t Z_0
 (\#eq:ex4)
 \end{equation}
 
-Donde asumiremos que el valor inicial es $Z_0 = 10$ y que la ecuación converge al valor de $1.3333333 \ldots$, cuando $t$ es muy grande o tiende a infinito. Ahora simulemos el comportamiento de ambos procesos y estableceremos los resultados del Cuadro \ref{eq_diff_01}. Notemos que el segundo proceso converge de una forma más rapida que el primero. El Cuadro \@ref(tab:table1) se ilustra en las siguientes dos Figura \@ref(fig:fig21) y Figura \@ref(fig:fig22).
+Donde asumiremos que el valor inicial es $Z_0 = 10$ y que la ecuación converge al valor de $1.3333333 \ldots$, cuando $t$ es muy grande o tiende a infinito. Ahora simulemos el comportamiento de ambos procesos y estableceremos los resultados del Cuadro \@ref(tab:table1). Notemos que el segundo proceso converge de una forma más rapida que el primero. El Cuadro \@ref(tab:table1) se ilustra en las siguientes dos Figura \@ref(fig:fig21) y Figura \@ref(fig:fig22).
 
 
 ```{r table1, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
