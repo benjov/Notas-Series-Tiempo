@@ -1,6 +1,6 @@
 --- 
 title: "Notas de Clase: Series de Tiempo"
-author: "Benjamín Oliva & Omar Alfaro-Rivera"
+author: "Benjamín Oliva & Omar Alfaro-Rivera & Emiliano Pérez Caullieres"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
