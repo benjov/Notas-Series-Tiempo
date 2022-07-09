@@ -264,7 +264,7 @@ kable(tabla1, caption = "Dos ejemplos de Procesos de Ecuaciones Lineales de Prim
 
 ```{r fig21, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap="Evolución del proceso dado por $Z_t =2+0.9Z_{t-1}$", fig.align='center', fig.height=3.5}
 
-ggplot(,aes(x = Tiempo, y=Zt))+
+ggplot(aes(x = Tiempo, y=Zt))+
   geom_line(col="blue4")+
   geom_point(col= "blue4")+
   labs(y=expression(Z[t]))
@@ -274,7 +274,7 @@ ggplot(,aes(x = Tiempo, y=Zt))+
 
 ```{r fig22, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap="Evolución del proceso dado por $Z_t =2-0.5Z_{t-1}$", fig.align='center', fig.height=3.5}
 
-ggplot(,aes(x = Tiempo, y=Zt2))+
+ggplot(aes(x = Tiempo, y=Zt2))+
   geom_line(col="red4")+
   geom_point(col= "red4")+
   labs(y=expression(Z[t]))
@@ -506,7 +506,7 @@ kable(tabla1, caption = "Un ejemplo de proceso de Ecuación de Segundo Orden con
 
 ```{r fig23, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap="Evolución del proceso dado por $Z_t =3+0.9Z_{t-1}-0.2Z_{t-2}$", fig.align='center', fig.height=3.5}
 
-ggplot(,aes(x = t, y=Zt))+
+ggplot(aes(x = t, y=Zt))+
   geom_line(col="green4")+
   geom_point(col= "green4")+
   labs(y=expression(Z[t]))
